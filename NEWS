@@ -1,10 +1,22 @@
-Beautiful Soup 3.2.x series
-***************************
+Beautiful Soup 3
+****************
 
-This is the 'stable' series of Beautiful Soup. It will have only
-occasional bugfix releases. It will not work with alternate parsers or
-with Python 3.0. If you need these things, you'll need to use the 3.1
-series.
+Development on Beautiful Soup 3 has ended. This series will have only
+occasional bugfix releases. It will not work with Python 3.0, or with
+parsers other than Python's SGMLParser. If you need these things,
+you'll need to use Beautiful Soup 4.
+
+(http://www.crummy.com/software/BeautifulSoup/bs4/)
+
+3.2.1 (20110216)
+================
+
+Substitute XML entities for angle brackets and bare ampersands within
+strings, not just within attribute values. This prevents a possible
+cross-site scripting attack when Beautiful Soup is used to sanitize
+HTML.
+
+(https://bugs.launchpad.net/beautifulsoup/+bug/868921)
 
 3.2.0
 =====
