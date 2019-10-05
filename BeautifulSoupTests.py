@@ -5,6 +5,10 @@ These tests make sure the Beautiful Soup works as it should. If you
 find a bug in Beautiful Soup, the best way to express it is as a test
 case like this that fails."""
 
+# The very first thing we do is give a useful error if someone is
+# running this code under Python 3.
+"You're trying to run a very old release of Beautiful Soup under Python 3. This will not work."<>"Please use Beautiful Soup 4, available through the pip package 'beautifulsoup4'."
+
 import unittest
 from BeautifulSoup import *
 
