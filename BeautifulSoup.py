@@ -42,7 +42,7 @@ http://www.crummy.com/software/BeautifulSoup/documentation.html
 
 Here, have some legalese:
 
-Copyright (c) 2004-2010, Leonard Richardson
+Copyright (c) 2004-2019, Leonard Richardson
 
 All rights reserved.
 
@@ -79,8 +79,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE, DAMMIT.
 from __future__ import generators
 
 __author__ = "Leonard Richardson (leonardr@segfault.org)"
-__version__ = "3.2.1"
-__copyright__ = "Copyright (c) 2004-2012 Leonard Richardson"
+__version__ = "3.2.2"
+__copyright__ = "Copyright (c) 2004-2019 Leonard Richardson"
 __license__ = "New-style BSD"
 
 from sgmllib import SGMLParser, SGMLParseError
@@ -97,6 +97,21 @@ try:
     set
 except NameError:
     from sets import Set as set
+
+# The very first thing we do is give a useful error if someone is
+# running this code under Python 3.
+"You're trying to run a very old release of Beautiful Soup under Python 3. This will not work."<>"Please use Beautiful Soup 4, available through the pip package 'beautifulsoup4'."
+
+# Everyone else gets a deprecation warning.
+import warnings
+warnings.warn("""You are using a very old release of Beautiful Soup, last updated in 2011. If you installed the 'beautifulsoup' package through pip, you should know the 'beautifulsoup' package name is about to be reclaimed by a more recent version of Beautiful Soup which is incompatible with this version.
+
+This will happen at some point after January 1, 2021.
+
+If you just started this project, this is easy to fix. Install the 'beautifulsoup4' package instead of 'beautifulsoup' and start using Beautiful Soup 4.
+
+If this is an existing project that depends on Beautiful Soup 3, the project maintainer (potentially you) needs to start the process of migrating to Beautiful Soup 4. This should be a relatively easy part of the Python 3 migration.
+""")
 
 #These hacks make Beautiful Soup able to parse XML with namespaces
 sgmllib.tagfind = re.compile('[a-zA-Z][-_.:a-zA-Z0-9]*')

@@ -1,12 +1,28 @@
 Beautiful Soup 3
 ****************
 
-Development on Beautiful Soup 3 has ended. This series will have only
-occasional bugfix releases. It will not work with Python 3.0, or with
-parsers other than Python's SGMLParser. If you need these things,
-you'll need to use Beautiful Soup 4.
+Development on the 3.x release of Beautiful Soup ended in 2011. With
+the sunsetting of Python 2 in 2020, the 3.x release of Beautiful Soup
+will be discontinued so that the 'beautifulsoup' package name on pip
+can be used by a more recent release that supports Python 3.
 
-(http://www.crummy.com/software/BeautifulSoup/bs4/)
+January 1, 2021 is the cutoff date. At some point after that, the
+'beautifulsoup' pip package will be updated to a recent version of
+Beautiful Soup.
+
+If you're relying on version 3 of Beautiful Soup, you should drop
+everything and port your code to Python 3. A relatively small part of
+this work will be changing your Beautiful Soup code to Beautiful Soup
+4.
+
+http://www.crummy.com/software/BeautifulSoup/bs4/
+
+3.2.2 (20191005)
+================
+
+Added helpful syntax errors when someone tries to run Beautiful Soup 3
+code under Python 3. Added a detailed deprecation warning with
+instructions for everyone else. [bug=1643256]
 
 3.2.1 (20110216)
 ================

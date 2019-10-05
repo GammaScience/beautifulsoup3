@@ -3,6 +3,10 @@ import unittest
 import warnings
 warnings.filterwarnings("ignore", "Unknown distribution option")
 
+# The very first thing we do is give a useful error if someone is
+# running this code under Python 3.
+"You're trying to run a very old release of Beautiful Soup under Python 3. This will not work."<>"Please use Beautiful Soup 4, available through the pip package 'beautifulsoup4'."
+
 import sys
 # patch distutils if it can't cope with the "classifiers" keyword
 if sys.version < '2.2.3':
